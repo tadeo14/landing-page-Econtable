@@ -1,12 +1,8 @@
-import Navbar from "./components/layout/Navbar";
+import AppRouter from "./router/AppRouter";
+
 
 function App() {
-  return (
-    <>
-      <Navbar />
-      <main className="pt-16"></main>
-    </>
-  );
+  return <AppRouter />
 }
 
 export default App;

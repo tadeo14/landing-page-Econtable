@@ -1,120 +1,173 @@
 import React, { useState } from "react";
-import logo from "../../../public/vite.svg"; // placeholder logo path
+import { NavLink } from "react-router-dom";
+import logo from "../../../public/vite.svg";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => setOpen(!open);
 
+const baseClasses =
+  "px-3 py-2 relative inline-block transition-colors duration-300 md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2";
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm font-medium">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* logo placeholder - replace src when available */}
+          {/* Logo */}
           <div className="flex-shrink-0">
-            <img src={logo} alt="Logo" className="h-8 w-auto" />
+            <NavLink to="/" end>
+              <img src={logo} alt="Logo" className="h-8 w-auto" />
+            </NavLink>
           </div>
-          {/* desktop navigation links */}
+
+          {/* Desktop */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4 ">
-              <a
-                href="#"
-                className="px-3 py-2 relative inline-block   md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
+            <div className="ml-10 flex items-baseline space-x-4">
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  `${baseClasses} ${
+                    isActive
+                      ? "text-blue-700 font-semibold md:after:w-0"
+                      : "md:after:w-0 md:after:bg-blue-700 hover:text-slate-900 md:hover:after:w-full"
+                  }`
+                }
               >
                 INICIO
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 relative inline-block  md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full  hover:text-blue-600"
+              </NavLink>
+
+              <NavLink
+                to="/quienes-somos"
+                className={({ isActive }) =>
+                  `${baseClasses} ${
+                    isActive
+                      ? "text-blue-700 font-semibold md:after:w-0"
+                      : "md:after:w-0 md:after:bg-blue-700 hover:text-slate-900 md:hover:after:w-full"
+                  }`
+                }
               >
                 QUIÉNES SOMOS
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 relative inline-block   md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
+              </NavLink>
+
+              <NavLink
+                to="/staff"
+                className={({ isActive }) =>
+                  `${baseClasses} ${
+                    isActive
+                      ? "text-blue-700 font-semibold md:after:w-0"
+                      : "md:after:w-0 md:after:bg-blue-700 hover:text-slate-900 md:hover:after:w-full"
+                  }`
+                }
               >
                 STAFF
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 relative inline-block  md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
+              </NavLink>
+
+              <NavLink
+                to="/servicios"
+                className={({ isActive }) =>
+                  `${baseClasses} ${
+                    isActive
+                      ? "text-blue-700 font-semibold md:after:w-0"
+                      : "md:after:w-0 md:after:bg-blue-700 hover:text-slate-900 md:hover:after:w-full"
+                  }`
+                }
               >
                 SERVICIOS
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 relative inline-block   md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600 "
+              </NavLink>
+
+              <NavLink
+                to="/contacto"
+                className={({ isActive }) =>
+                  `${baseClasses} ${
+                    isActive
+                      ? "text-blue-600 md:after:w-0"
+                      : "md:after:w-0 md:after:bg-blue-700 hover:text-slate-900 md:hover:after:w-full"
+                  }`
+                }
               >
                 CONTACTO
-              </a>
+              </NavLink>
             </div>
           </div>
-          {/* mobile hamburger */}
+
+          {/* Mobile Button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:outline-none"
-              aria-controls="mobile-menu"
-              aria-expanded={open}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500"
             >
-              <span className="sr-only">Open main menu</span>
-              {open ? (
-                <svg
-                  className="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
+              {open ? "✕" : "☰"}
             </button>
           </div>
         </div>
       </div>
 
-      {/* mobile menu panel */}
+      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#" className="block px-3 py-2 text-base">
+        <div className="md:hidden bg-white shadow-md">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <NavLink
+              to="/"
+              end
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-3 py-2 text-base ${
+                  isActive ? "text-blue-600 font-semibold" : ""
+                }`
+              }
+            >
               INICIO
-            </a>
-            <a href="#" className="block px-3 py-2 text-base">
+            </NavLink>
+
+            <NavLink
+              to="/quienes-somos"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-3 py-2 text-base ${
+                  isActive ? "text-blue-600 font-semibold" : ""
+                }`
+              }
+            >
               QUIÉNES SOMOS
-            </a>
-            <a href="#" className="block px-3 py-2 text-base">
+            </NavLink>
+
+            <NavLink
+              to="/staff"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-3 py-2 text-base ${
+                  isActive ? "text-blue-600 font-semibold" : ""
+                }`
+              }
+            >
               STAFF
-            </a>
-            <a href="#" className="block px-3 py-2 text-base">
+            </NavLink>
+
+            <NavLink
+              to="/servicios"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-3 py-2 text-base ${
+                  isActive ? "text-blue-600 font-semibold" : ""
+                }`
+              }
+            >
               SERVICIOS
-            </a>
-            <a href="#" className="block px-3 py-2 text-base">
+            </NavLink>
+
+            <NavLink
+              to="/contacto"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-3 py-2 text-base ${
+                  isActive ? "text-blue-600 font-semibold" : ""
+                }`
+              }
+            >
               CONTACTO
-            </a>
+            </NavLink>
           </div>
         </div>
       )}
