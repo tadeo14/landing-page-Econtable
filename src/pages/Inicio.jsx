@@ -51,7 +51,7 @@ export default function Inicio() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-2 text-center md:text-left">
               <h2 className="text-3xl font-semibold mb-3">Misión y valores</h2>
-              <div className="w-20 h-0.5 bg-indigo-400 mb-6"  />
+              <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-blue-500 mb-6 mx-auto md:mx-0" />
 
               <p className="text-gray-300 mb-6 max-w-2xl">
                 Somos un estudio contable dedicado a brindar claridad financiera
@@ -94,7 +94,7 @@ export default function Inicio() {
               </ul>
             </div>
 
-            <div className="md:col-span-1 flex flex-col gap-4 md:mt-0 mt-5 md:self-start self-center">
+            <div className="md:col-span-1 flex flex-col gap-4 md:mt-5 mt-0 md:self-start self-center">
               <img
                 src={laptopImg}
                 alt="Asesoría"
