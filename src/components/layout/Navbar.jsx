@@ -6,7 +6,7 @@ export default function Navbar() {
   const toggleMenu = () => setOpen(!open);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm font-medium">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* logo placeholder - replace src when available */}
@@ -18,31 +18,31 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4 ">
               <a
                 href="#"
-                className="px-3 py-2 relative inline-block  font-medium md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
+                className="px-3 py-2 relative inline-block   md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
               >
                 INICIO
               </a>
               <a
                 href="#"
-                className="px-3 py-2 relative inline-block  font-medium md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full  hover:text-blue-600"
+                className="px-3 py-2 relative inline-block  md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full  hover:text-blue-600"
               >
                 QUIÉNES SOMOS
               </a>
               <a
                 href="#"
-                className="px-3 py-2 relative inline-block  font-medium md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
+                className="px-3 py-2 relative inline-block   md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
               >
                 STAFF
               </a>
               <a
                 href="#"
-                className="px-3 py-2 relative inline-block  font-medium md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
+                className="px-3 py-2 relative inline-block  md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600"
               >
                 SERVICIOS
               </a>
               <a
                 href="#"
-                className="px-3 py-2 relative inline-block  font-medium md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600 "
+                className="px-3 py-2 relative inline-block   md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:w-0 md:after:bg-blue-600 md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2 md:hover:after:w-full hover:text-blue-600 "
               >
                 CONTACTO
               </a>

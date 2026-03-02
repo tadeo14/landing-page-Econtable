@@ -2,9 +2,10 @@ import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
-   <div>
-<Navbar/>
-   </div>
+    <>
+      <Navbar />
+      <main className="pt-16"></main>
+    </>
   );
 }
 
