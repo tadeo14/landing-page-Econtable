@@ -95,21 +95,35 @@ export default function Inicio() {
             </div>
 
             <div className="md:col-span-1 flex flex-col gap-4 md:mt-5 mt-0 md:self-start self-center">
-              <img
-                src={laptopImg}
-                alt="Asesoría"
-                className="w-full h-28 object-cover rounded-sm border border-gray-700"
-              />
-              <img
-                src={calculoImg}
-                alt="Tecnología"
-                className="w-full h-28 object-cover rounded-sm border border-gray-700"
-              />
-              <img
-                src={decisionesImg}
-                alt="Confianza"
-                className="w-full h-28 object-cover rounded-sm border border-gray-700"
-              />
+              <div className="card card-compact w-full bg-base-100 shadow-sm">
+                <figure>
+                  <img
+                    src={laptopImg}
+                    alt="Asesoría"
+                    className="w-full h-28 object-cover"
+                  />
+                </figure>
+              </div>
+
+              <div className="card card-compact w-full bg-base-100 shadow-sm">
+                <figure>
+                  <img
+                    src={calculoImg}
+                    alt="Tecnología"
+                    className="w-full h-28 object-cover"
+                  />
+                </figure>
+              </div>
+
+              <div className="card card-compact w-full bg-base-100 shadow-sm">
+                <figure>
+                  <img
+                    src={decisionesImg}
+                    alt="Confianza"
+                    className="w-full h-28 object-cover"
+                  />
+                </figure>
+              </div>
             </div>
           </div>
         </div>
