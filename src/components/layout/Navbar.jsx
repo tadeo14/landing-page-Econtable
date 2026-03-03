@@ -7,8 +7,8 @@ export default function Navbar() {
 
   const toggleMenu = () => setOpen(!open);
 
-const baseClasses =
-  "px-3 py-2 relative inline-block transition-colors duration-300 md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2";
+  const baseClasses =
+    "px-3 py-2 relative inline-block transition-colors duration-300 md:after:content-[''] md:after:absolute md:after:left-1/2 md:after:-bottom-1 md:after:h-[2px] md:after:rounded-full md:after:transition-all md:after:duration-700 md:after:ease-in-out md:after:-translate-x-1/2";
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm font-medium">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +96,7 @@ const baseClasses =
             <button
               onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500"
+              className="btn btn-ghost btn-square p-2 "
             >
               {open ? "✕" : "☰"}
             </button>
