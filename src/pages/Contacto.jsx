@@ -43,7 +43,7 @@ export default function Contacto() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Columna izquierda: título, texto y contactos */}
             <div className="h-full flex flex-col justify-center">
-              <h1 className="text-5xl md:text-7xl leading-tight font-bold mb-6 text-white">
+              <h1 className="text-5xl md:text-7xl  font-bold mb-6 text-white">
                 Contacto
               </h1>
 
