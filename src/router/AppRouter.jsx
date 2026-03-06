@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
@@ -8,12 +9,22 @@ import Contacto from "../pages/Contacto";
 import QuienesSomos from "../pages/QuienesSomos";
 import Staff from "../pages/Staff";
 import FloatingContact from "../components/layout/FloatingContact";
+import Loader from "../components/Loader";
 
-export default function AppRouter() {
+// 👇 Componente separado para detectar cambios de ruta
+function AppContent() {
+  const [loading, setLoading] = useState(true);
+  const location = useLocation(); // detecta cambios de ruta
+
+  useEffect(() => {
+    setLoading(true); // activa el loader en cada cambio de página
+  }, [location.pathname]);
+
   return (
-    <BrowserRouter>
+    <>
+      {loading && <Loader onDone={() => setLoading(false)} />}
       <Navbar />
-<FloatingContact />
+      <FloatingContact />
       <main className="pt-16">
         <Routes>
           <Route path="/" element={<Inicio />} />
@@ -23,8 +34,15 @@ export default function AppRouter() {
           <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
+      <Footer />
+    </>
+  );
+}
 
-       <Footer />
+export default function AppRouter() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
