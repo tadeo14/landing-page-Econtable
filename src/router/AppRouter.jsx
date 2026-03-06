@@ -6,12 +6,13 @@ import Servicios from "../pages/Servicios";
 import Contacto from "../pages/Contacto";
 import QuienesSomos from "../pages/QuienesSomos";
 import Staff from "../pages/Staff";
+import FloatingContact from "../components/layout/FloatingContact";
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Navbar />
-
+<FloatingContact />
       <main className="pt-16">
         <Routes>
           <Route path="/" element={<Inicio />} />
