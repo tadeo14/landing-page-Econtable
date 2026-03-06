@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import Inicio from "../pages/Inicio";
 import Servicios from "../pages/Servicios";
 import Contacto from "../pages/Contacto";
@@ -22,6 +23,8 @@ export default function AppRouter() {
           <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
+
+       <Footer />
     </BrowserRouter>
   );
 }
