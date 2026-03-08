@@ -11,13 +11,15 @@ import Staff from "../pages/Staff";
 import FloatingContact from "../components/layout/FloatingContact";
 import Loader from "../components/Loader";
 
-// 👇 Componente separado para detectar cambios de ruta
 function AppContent() {
   const [loading, setLoading] = useState(true);
-  const location = useLocation(); // detecta cambios de ruta
+  const location = useLocation();
 
   useEffect(() => {
-    setLoading(true); // activa el loader en cada cambio de página
+    // ✅ Solo activa el loader si estamos en la página de inicio
+    if (location.pathname === "/") {
+      setLoading(true);
+    }
   }, [location.pathname]);
 
   return (
