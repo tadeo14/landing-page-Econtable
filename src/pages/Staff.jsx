@@ -1,5 +1,6 @@
 import React from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
+import perfil from "/src/assets/perfil.jpg";
 
 // ── Datos ──────────────────────────────────────────────────────────────
 const orgData = {
