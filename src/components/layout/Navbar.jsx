@@ -96,7 +96,8 @@ export default function Navbar() {
             <button
               onClick={toggleMenu}
               type="button"
-              className="btn btn-ghost btn-square p-2 "
+              aria-label={open ? "Cerrar menú" : "Abrir menú"}
+              className="btn btn-ghost btn-square p-3 text-2xl leading-none"
             >
               {open ? "✕" : "☰"}
             </button>
