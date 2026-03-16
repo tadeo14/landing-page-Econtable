@@ -2,56 +2,49 @@ import React from "react";
 import perfil from "/src/assets/perfil.jpg";
 import StaffCard from "../components/StaffCard";
 
-// ── Datos ──────────────────────────────────────────────────────────────
 const staffData = [
   {
     name: "Daniel Bisonni",
     imageSrc: perfil,
-    description: "Contador Público egresado de la Universidad Nacional de Rosario. Perito Contador ante los Tribunales Federales del Poder Judicial de la Nación y los Tribunales Provinciales del Poder Judicial de la Provincia de Santa Fe. Más de 10 años de experiencia asesorando empresas. Especialista en impuestos, costos y mercados de capitales.",
+    description: "Descripción del segundo miembro del staff. Cargo, experiencia y especialidades.",  },
+  {
+    name: "Nombre Apellido",
+    imageSrc: perfil,
+    description: "Descripción del segundo miembro del staff. Cargo, experiencia y especialidades.",
   },
   {
-    name: "Daniel Bisonni",
+    name: "Nombre Apellido",
     imageSrc: perfil,
-    description: "Contador Público egresado de la Universidad Nacional de Rosario. Perito Contador ante los Tribunales Federales del Poder Judicial de la Nación y los Tribunales Provinciales del Poder Judicial de la Provincia de Santa Fe. Más de 10 años de experiencia asesorando empresas. Especialista en impuestos, costos y mercados de capitales.",
+    description: "Descripción del tercer miembro del staff. Cargo, experiencia y especialidades.",
   },
   {
-    name: "Daniel Bisonni",
+    name: "Nombre Apellido",
     imageSrc: perfil,
-    description: "Contador Público egresado de la Universidad Nacional de Rosario. Perito Contador ante los Tribunales Federales del Poder Judicial de la Nación y los Tribunales Provinciales del Poder Judicial de la Provincia de Santa Fe. Más de 10 años de experiencia asesorando empresas. Especialista en impuestos, costos y mercados de capitales.",
+    description: "Descripción del cuarto miembro del staff. Cargo, experiencia y especialidades.",
   },
-  {
-    name: "Daniel Bisonni",
-    imageSrc: perfil,
-    description: "Contador Público egresado de la Universidad Nacional de Rosario. Perito Contador ante los Tribunales Federales del Poder Judicial de la Nación y los Tribunales Provinciales del Poder Judicial de la Provincia de Santa Fe. Más de 10 años de experiencia asesorando empresas. Especialista en impuestos, costos y mercados de capitales.",
-  }  
 ];
 
-
-
-// ── Componente principal ───────────────────────────────────────────────
 export default function Staff() {
   return (
-    <section aria-label="Staff" className="py-16 min-h-screen">
-      <div className="max-w-6xl mx-auto px-4">
+    <section aria-label="Staff" className="py-16 min-h-screen bg-[#305CDE]">
+      <div className="max-w-7xl mx-auto px-4">
 
         {/* Encabezado */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold mb-3">Nuestro Staff</h2>
-          <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-blue-500 mx-auto mb-6" />
-          <p className="text-gray-600 max-w-xl mx-auto text-sm">
+          <h2 className="text-3xl font-semibold text-[#0F172A] mb-3">Nuestro Staff</h2>
+          <div className="w-12 sm:w-16 md:w-20 h-0.5 bg-[#2563EB] mx-auto mb-6" />
+          <p className="text-[#FFFFE3]/100 max-w-xl mx-auto text-lg">
             Conocé al equipo de profesionales que trabaja día a día para acompañar
             el crecimiento de tu empresa.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center max-w-2xl mx-auto">
+        <div className="grid grid-cols-4 gap-8 justify-items-center">
           {staffData.map((member) => (
             <StaffCard key={member.name} {...member} />
           ))}
         </div>
-        
-        
 
       </div>
     </section>
