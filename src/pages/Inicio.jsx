@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../components/Carousel";
+import Partners from "../components/Partners";
 import laptopImg from "../assets/laptop.jpg";
 import calculoImg from "../assets/calculo.jpg";
 import decisionesImg from "../assets/decisiones.jpg";
@@ -128,6 +129,7 @@ export default function Inicio() {
           </div>
         </div>
       </section>
+      <Partners />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Partners from "../components/Partners";
 
 const teamMembers = [
   { name: "Ana García", role: "Socia fundadora · CPN", img: "https://placehold.co/300x300?text=AG" },
@@ -74,6 +75,7 @@ export default function QuienesSomos() {
           </div>
         </div>
       </section>
+        <Partners/>
 
       {/* ── Equipo / Fundadores ── 
       <section aria-label="Equipo" className="py-16 bg-gray-800 text-gray-100">
