@@ -15,7 +15,7 @@ export default function Loader({ onDone }) {
         fading ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      <span className="font-serif text-6xl font-bold text-[#1a2a5e] animate-pulse">
+      <span className="font-serif text-6xl font-bold text-[#1a2a5e] animate-pulse text-center px-4">
         Lofeudo y Asociados
       </span>
     </div>
