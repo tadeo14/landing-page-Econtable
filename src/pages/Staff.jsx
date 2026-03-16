@@ -40,7 +40,7 @@ export default function Staff() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-4 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
           {staffData.map((member) => (
             <StaffCard key={member.name} {...member} />
           ))}

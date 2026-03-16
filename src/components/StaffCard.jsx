@@ -1,6 +1,6 @@
 export default function StaffCard({ name, description, imageSrc }) {
   return (
-    <div className="hover-3d card w-60 shadow-xl overflow-hidden bg-white rounded-3xl border border-[#D1D5DB]">
+    <div className="hover-3d card w-full shadow-xl overflow-hidden bg-white rounded-3xl border border-[#D1D5DB]">
       <figure className="px-6 pt-6">
         <img
           src={imageSrc}
