@@ -168,7 +168,7 @@ export default function Contacto() {
                       Nombre
                     </label>
                     <div className="relative">
-                      <UserIcon className="w-5 h-5 text-base-content/40 absolute left-4 top-1/2 -translate-y-1/2" />
+                      <UserIcon className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                       <input
                         id="name"
                         name="name"
@@ -186,7 +186,7 @@ export default function Contacto() {
                       Email
                     </label>
                     <div className="relative">
-                      <EnvelopeIcon className="w-5 h-5 text-base-content/40 absolute left-4 top-1/2 -translate-y-1/2" />
+                      <EnvelopeIcon className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                       <input
                         id="email"
                         name="email"
@@ -204,13 +204,13 @@ export default function Contacto() {
                       Mensaje
                     </label>
                     <div className="relative">
-                      <ChatBubbleLeftIcon className="w-5 h-5 text-base-content/40 absolute left-4 top-4" />
+                      <ChatBubbleLeftIcon className="w-6 h-6 text-gray-400 absolute left-4 top-4 pointer-events-none z-10" />
                       <textarea
                         id="message"
                         name="message"
                         required
                         placeholder="Escribe tu mensaje"
-                        className="textarea textarea-bordered w-full pl-12 rounded-xl h-40 focus:textarea-primary transition"
+                        className="textarea textarea-bordered w-full pl-14 pt-4 rounded-xl h-40 focus:textarea-primary transition"
                       ></textarea>
                     </div>
                   </div>
