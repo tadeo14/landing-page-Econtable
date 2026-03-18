@@ -125,11 +125,11 @@ export default function Servicios() {
                 className="flex-1 text-center flex flex-col justify-between py-4"
               >
                 <div className="text-gray-700">
-                  <h2 className="font-semibold mb-4">{s.title}</h2>
+                  <h2 className="font-semibold mb-4 text-xl  md:text-base">{s.title}</h2>
                 </div>
                 <button
                   onClick={() => scrollToService(idx)}
-                  className="text-sm inline-block bg-slate-800 hover:bg-blue-700 text-white py-1.5 px-3 mx-auto w-auto sm:w-40"
+                  className="text-base md:text-sm inline-block bg-slate-800 hover:bg-blue-700 text-white py-1.5 px-3 mx-auto w-auto sm:w-40"
                 >
                   Más información
                 </button>
