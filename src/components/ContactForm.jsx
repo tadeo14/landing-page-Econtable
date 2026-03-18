@@ -6,139 +6,144 @@ import {
   EnvelopeIcon,
   ChatBubbleLeftIcon,
 } from "@heroicons/react/24/outline";
+import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+    reset,
+  } = useForm({
+    mode: "onChange",
+  });
+  const onSubmit = (data, e) => {
     emailjs
       .sendForm(
-        "service_b2pdb3t", // 👈 tu SERVICE_ID (el de la captura)
-        "template_e2ey5hg", // 👈 pegá el tuyo
-        form,
-        "BDtEaJzGHui804FZE", // 👈 tu public key
+        "service_b2pdb3t",
+        "template_e2ey5hg",
+        e.target,
+        "BDtEaJzGHui804FZE",
       )
-      .then(
-        () => {
-          setSubmitted(true);
-          try {
-            form.reset();
-            setIsValid(false);
-          } catch (err) {
-            // ignore
-          }
-        },
-        (error) => {
-          console.error("Error:", error);
-        },
-      );
+      .then(() => {
+        setSubmitted(true);
+        reset(); 
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
-
   useEffect(() => {
-    if (!submitted) return undefined;
+    if (!submitted) return;
     const t = setTimeout(() => setSubmitted(false), 4000);
     return () => clearTimeout(t);
   }, [submitted]);
 
 
-
-  
- 
-
-
-
   return (
-    <div className="card bg-base-100 shadow-xl focus-within:ring-0 focus-within:outline-none">
+    <div className="card bg-base-100 shadow-xl">
       <div className="card-body p-8 md:p-10">
         {submitted && (
-          <div className="alert shadow-md border border-green-200 bg-green-50 text-green-800">
-            <div className="flex items-start gap-3">
-              <span className="text-xl">✔</span>
-              <div>
-                <p className="font-semibold">Consulta enviada correctamente</p>
-                <p className="text-sm opacity-80">
-                  Hemos recibido tu mensaje. Nuestro equipo se pondrá en
-                  contacto a la brevedad.
-                </p>
-              </div>
-            </div>
+          <div className="my-2 alert shadow-md border border-green-200 bg-green-50 text-green-800">
+            <p className="font-semibold"> Consulta enviada correctamente</p>
           </div>
         )}
 
-        <form  onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Nombre */}
             <div className="form-control">
+              <label className="block text-sm font-medium mb-2">Nombre</label>
+
               <div className="relative">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Nombre
-                </label>
-                <UserIcon className="w-5 h-5 text-gray-400 absolute left-4 top-12 -translate-y-1/2 pointer-events-none z-10" />
+                <UserIcon className="pointer-events-none absolute left-4 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-blue-500" />
+
                 <input
-                  id="name"
-                  name="name"
                   type="text"
-                  required
                   placeholder="Nombre"
-                  className="input input-bordered w-full pl-12 rounded-xl border-2 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-0 focus:outline-none transition"
+                  className="input input-bordered w-full rounded-xl border-2 border-slate-300 pl-12 text-slate-800 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  // 🔥 VALIDACIONES
+                  {...register("name", {
+                    required: "El nombre es obligatorio",
+                    minLength: {
+                      value: 2,
+                      message: "Debe tener al menos 2 caracteres",
+                    },
+                  })}
                 />
               </div>
+
+              {/* ❗ ERROR */}
+              {errors.name && (
+                <p className="text-red-600 text-sm mt-2">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
 
             {/* Email */}
             <div className="form-control">
+              <label className="block text-sm font-medium mb-2">Email</label>
+
               <div className="relative">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Email
-                </label>
-                <EnvelopeIcon className="w-5 h-5 text-gray-400 absolute left-4 top-12 -translate-y-1/2 pointer-events-none z-10" />
+                <EnvelopeIcon className="pointer-events-none absolute left-4 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-blue-500" />
+
                 <input
-                  id="email"
-                  name="email"
                   type="email"
-                  required
                   placeholder="Email"
-         
-                  aria-describedby="email-error"
-                  className="input input-bordered w-full pl-12 rounded-xl border-2 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-0 focus:outline-none transition"
+                  className="input input-bordered w-full rounded-xl border-2 border-slate-300 pl-12 text-slate-800 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  {...register("email", {
+                    required: "El email es obligatorio",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Email inválido",
+                    },
+                  })}
                 />
-            
               </div>
+
+              {errors.email && (
+                <p className="text-red-600 text-sm mt-2">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
             {/* Mensaje */}
             <div className="md:col-span-2 form-control">
+              <label className="block text-sm font-medium mb-2">Mensaje</label>
+
               <div className="relative">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Mensaje
-                </label>
-                <ChatBubbleLeftIcon className="w-6 h-6 text-gray-400 absolute left-4 top-14 pointer-events-none z-10" />
+                <ChatBubbleLeftIcon className="pointer-events-none absolute left-4 top-4 z-10 h-6 w-6 text-blue-500" />
+
                 <textarea
-                  id="message"
-                  name="message"
-                  required
                   placeholder="Mensaje"
-                  className="textarea textarea-bordered w-full pl-14 pt-4 rounded-xl h-40 border-2 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-0 focus:outline-none transition"
-                ></textarea>
+                  className="textarea textarea-bordered h-40 w-full rounded-xl border-2 border-slate-300 pl-14 pt-4 text-slate-800 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  {...register("message", {
+                    required: "El mensaje es obligatorio",
+                    minLength: {
+                      value: 10,
+                      message: "Debe tener al menos 10 caracteres",
+                    },
+                  })}
+                />
               </div>
+
+              {errors.message && (
+                <p className="text-red-600 text-sm mt-2">
+                  {errors.message.message}
+                </p>
+              )}
             </div>
 
+            {/* Botón */}
             <div className="md:col-span-2 flex justify-end">
               <CustomButton
                 type="submit"
-           
-                
+                disabled={!isValid}
+                className={!isValid ? "opacity-50 cursor-not-allowed" : ""}
               >
                 Enviar mensaje
               </CustomButton>
