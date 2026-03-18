@@ -30,8 +30,6 @@ export default function Contacto() {
     return () => obs.disconnect();
   }, []);
 
-
-
   return (
     <div className="relative">
       <section className="w-full bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100">
@@ -140,7 +138,7 @@ export default function Contacto() {
       </section>
 
       {/* Sección inferior con formulario (fondo ancho completo) */}
-      <section className="w-full bg-base-200 text-base-content">
+      <section className="w-full ">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="mb-10">
             <h2 className="text-3xl md:text-4xl font-semibold">
@@ -152,8 +150,7 @@ export default function Contacto() {
               ¿Tenés alguna consulta? Estamos para ayudarte.
             </p>
           </div>
-<ContactForm />
-         
+          <ContactForm />
         </div>
       </section>
     </div>
